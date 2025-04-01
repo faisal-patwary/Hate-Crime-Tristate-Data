@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="hate_crimes" database="LogicalDesign" id="LogicalDesign-1ecb" >
+	<schema name="hate_crimes" >
+		<table name="dim_calender" prior="dim_date" >
+			<column name="date_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="year_num" type="INT" jt="4" mandatory="y" />
+			<column name="quarter_num" type="INT" jt="4" mandatory="y" />
+			<column name="month_num" type="INT" jt="4" mandatory="y" />
+			<column name="day_num" type="INT" jt="4" mandatory="y" />
+			<column name="week_of_month" type="INT" jt="4" mandatory="y" />
+			<column name="week_of_year" type="INT" jt="4" mandatory="y" />
+			<column name="holiday" type="BOOLEAN" jt="-7" mandatory="y" />
+			<column name="weekend" type="BOOLEAN" jt="-7" mandatory="y" />
+			<column name="month_name" type="VARCHAR" length="25" jt="12" />
+			<column name="day_name" type="VARCHAR" length="25" jt="12" />
+			<index name="pk_dim_calender" unique="PRIMARY_KEY" >
+				<column name="date_id" />
+			</index>
+		</table>
+		<table name="dim_location" prior="di" >
+			<column name="location_id" type="INT" jt="4" mandatory="y" />
+			<column name="state_name" type="VARCHAR" length="25" jt="12" mandatory="y" />
+			<column name="agency_type_name" type="VARCHAR" length="25" jt="12" mandatory="y" />
+			<column name="pug_agency_name" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<column name="population_group" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_dim_location" unique="PRIMARY_KEY" >
+				<column name="location_id" />
+			</index>
+		</table>
+		<table name="dim_offender" prior="dim_offense" >
+			<column name="offender_id" prior="offense_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="offense_name" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="offender_race" type="VARCHAR" length="25" jt="12" />
+			<column name="offender_ethnicity" type="VARCHAR" length="25" jt="12" />
+			<column name="bias" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="multiple_offense" type="BOOLEAN" jt="-7" mandatory="y" />
+			<column name="multiple_bias" type="BOOLEAN" jt="-7" mandatory="y" />
+			<column name="adult_offender" prior="adult" type="BOOLEAN" jt="-7" mandatory="y" />
+			<column name="juvenile_offender" type="BOOLEAN" jt="-7" mandatory="y" />
+			<index name="pk_dim_offender" unique="PRIMARY_KEY" >
+				<column name="offender_id" />
+			</index>
+		</table>
+		<table name="dim_victim" prior="Entity" >
+			<column name="victim_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="victim_type" type="VARCHAR" length="25" jt="12" />
+			<index name="pk_dim_victim" unique="PRIMARY_KEY" >
+				<column name="victim_id" />
+			</index>
+		</table>
+		<table name="fact_crimes" prior="Entity" >
+			<column name="crime_id" type="INT" jt="4" mandatory="y" />
+			<column name="adult_offender_count" type="INT" jt="4" />
+			<column name="juvenile_offender_count" type="INT" jt="4" />
+			<column name="total_offender_count" type="INT" jt="4" />
+			<column name="adult_victim_count" type="INT" jt="4" />
+			<column name="juvenile_victim_count" type="INT" jt="4" />
+			<column name="victim_count" type="INT" jt="4" />
+			<column name="total_individual_victims" type="INT" jt="4" />
+			<column name="incident_date_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="incident_location_id" type="INT" jt="4" mandatory="y" />
+			<column name="offender_id" prior="offense_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="victim_id" type="BIGINT" jt="-5" mandatory="y" />
+			<index name="pk_fact_crimes" unique="PRIMARY_KEY" >
+				<column name="crime_id" />
+			</index>
+			<fk name="fk_fact_crimes_dim_calender" to_schema="hate_crimes" to_table="dim_calender" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="incident_date_id" pk="date_id" />
+			</fk>
+			<fk name="fk_fact_crimes_dim_location" to_schema="hate_crimes" to_table="dim_location" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="incident_location_id" pk="location_id" />
+			</fk>
+			<fk name="fk_fact_crimes_dim_offense" to_schema="hate_crimes" to_table="dim_offender" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="offender_id" pk="offender_id" />
+			</fk>
+			<fk name="fk_fact_crimes_dim_victim" to_schema="hate_crimes" to_table="dim_victim" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="victim_id" pk="victim_id" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Diagram" id="Diagram-1310" show_relation="columns" >
+		<entity schema="hate_crimes" name="dim_calender" color="C1D8EE" x="779" y="437" />
+		<entity schema="hate_crimes" name="dim_location" color="C1D8EE" x="114" y="247" />
+		<entity schema="hate_crimes" name="dim_offender" color="C1D8EE" x="114" y="456" />
+		<entity schema="hate_crimes" name="dim_victim" color="C1D8EE" x="779" y="285" />
+		<entity schema="hate_crimes" name="fact_crimes" color="C1D8EE" x="437" y="247" />
+		<callout x="57" y="57" pointer="Round" >
+			<comment><![CDATA[- Create new entities by right-clicking the diagram. 
+- Double-click entity headers to edit.
+- Get a better understanding of the schema by creating multiple diagrams.
+- Convert the logical design to physical design and deploy it into the database.]]></comment>
+		</callout>
+	</layout>
+</project>
