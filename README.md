@@ -1,5 +1,5 @@
 # Hate-Crime-Tristate-Data
-Hate crimes recorded by the FBI across the tristate region from 2021 to 2023
+Hate crimes recorded by the FBI across the tristate region from 2020 to 2023
 
 For this project, I will create a data warehouse using the FBI's hate crime dataset. On the CDE website, they stated that the most up-to-date data included records up to 2023.
 Preferably, I was also looking forward to working with 2024 data, but based on when data is updated, I would have had to wait until September of this year (2025) to access 2024 records.
