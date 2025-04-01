@@ -18,4 +18,4 @@ This project has 6 main components which follows:
 I have uploaded the necessary links and files for you to look over my work.
 The uploaded PDF explains my data and where I sourced it from. It also defines both my business and functional requirements as well as displaying my architecture models with brief descriptions for each of them.
 I have provided links to my data dictionary and dataset within this document.
-I also uploaded my star scheme model as a DBS file with a separate PDF file titled "dimension_model" which lists out the facts and dimensions.
+I also uploaded my star schema model as a DBS file with a separate PDF file titled "dimension_model" which lists out the facts and dimensions.
