@@ -19,3 +19,23 @@ I have uploaded the necessary links and files for you to look over my work.
 The uploaded PDF explains my data and where I sourced it from. It also defines both my business and functional requirements as well as displaying my architecture models with brief descriptions for each of them.
 I have provided links to my data dictionary and dataset within this document.
 I also uploaded my star schema model as a DBS file with a separate PDF file titled "dimension_model" which lists out the facts and dimensions.
+
+## Business Requirements
+Thousands of hate crime incidents occur across the tristate region each year. My goal is to
+collect and store data from 2020-2023 enabling year-over-year comparisons to show us
+  ● Shifts in incident frequency
+  ● Commonly targeted groups within the Tri-state region
+  
+## Functional Requirements
+This system will allow users to do the following:
+  ● Filter hate crime based on location, date, and types of offenses
+  ● Create year-over-year comparison reports
+  ● Display interactive charts that compare trends by year or location
+  ● Download query results in different formats for external analysis
+
+## Data Requirements
+The data I am working with is a structured csv file which contains historic records of hate crimes commited in the US.
+There is a unstructured part of my data which is my reference data. This explains the values in my data.
+
+## Storage Tool
+For this project, I have decided to use Google Cloud Storage.
