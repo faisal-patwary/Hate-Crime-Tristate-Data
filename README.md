@@ -50,8 +50,8 @@ For this project, I have decided to use:
 5) Perform visualizing data with Tableau
 
 ## Visuals and Findings
-[Tableau Dashboard and Heat Map](https://public.tableau.com/views/Tri-StateHateCrimeInformation/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-[Findings](https://docs.google.com/document/d/1JI1c791Uc9pVhnyeMdfkCzGew7WcTbrX5Sn_XRVI4V4/edit?usp=sharing)
+1) [Tableau Dashboard and Heat Map](https://public.tableau.com/views/Tri-StateHateCrimeInformation/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+2) [Findings](https://docs.google.com/document/d/1JI1c791Uc9pVhnyeMdfkCzGew7WcTbrX5Sn_XRVI4V4/edit?usp=sharing)
 
 ## Moving Forward
 While doing my visualization, I noticed certain values, such as offense type and location name, had zero records. The fact that they are there as an option opens the door for questions such as what state has the most common reporting of those incidents, or what year did those incident reports peak. You are welcome to take your approach to this project with a different business requirement or functional requirement that better suits your research.
