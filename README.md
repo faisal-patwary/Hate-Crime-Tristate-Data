@@ -39,7 +39,7 @@ My data has an unstructured part, which is my reference data. This part explains
 For this project, I have decided to use:
 - Google Cloud Storage - Temporary storage
 - Google Colab - Python environment for ETL
-- Snowflake - Data Warehouse
+- Snowflake - [Data Warehouse](https://app.snowflake.com/east-us-2.azure/zqa66309/w5E5MoeZbp0T#query)
 - Tableau - Visualization tool
 
 ## Pipeline Process
