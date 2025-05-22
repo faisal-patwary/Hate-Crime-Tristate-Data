@@ -1,0 +1,23 @@
+Key,Definition
+incident_id,unique identifier for each case
+date_year,the date year in the format YYYY
+pug_agency_name,name of the agency where the crime occurred. Name of city/county/station/college/tribal/other
+agency_type_name,is it a: city/county/station/college/tribal/other
+state_name,name of the state
+population_group,description of the population range
+incident_date,date of incident in the format MM/DD/YYYY
+adult_victim_count,integer value of adult victims
+juvenile_victim_count,integer value of juvenile victims
+total_offender_count,integer value of total offenders
+adult_offender_count,integer value of adult offenders
+juvenile_offernder_count,integer value of juvenile offenders
+offender_race,"race of offender. E.g. white, black, asian, pacific islander, American Indian, etc."
+offender_ethnicity,ethnicity of offender
+victim_count,integer value of total victims
+offense_name,the type(s) of offense commited
+total_individual_victims,integer value of indivuals who fell victim
+location_name,"specific description of the location of the incident. E.g. Alley, Highway, House"
+bias_desc,offender's bias during incident/bad motivation against certain group
+victim_types,"were they a(n) individual, business, government, religious group, law enforcement, other"
+multiple_offense,S = Single offense  M = Multiple offenses *During the single incident*
+multiple_bias,S = Single bias  M = Multiple Bias *During the single incident*
